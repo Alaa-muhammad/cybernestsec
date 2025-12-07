@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberNestSec</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 420px;
+            width: 100%;
+            background: rgba(30, 41, 59, 0.2);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-radius: 30px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+                0 8px 16px rgba(0, 0, 0, 0.3);
+            border: 1.5px solid rgba(148, 163, 184, 0.3);
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #e2e8f0;
+            font-weight: 700;
+        }
+
+        .bio {
+            text-align: center;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+            font-size: 14px;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1.5px solid rgba(148, 163, 184, 0.4);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #94a3b8;
+        }
+
+        .social-icon:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(148, 163, 184, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+            color: #cbd5e1;
+        }
+
+        .social-icon svg {
+            pointer-events: none;
+        }
+
+        .link-button {
+            width: 100%;
+            padding: 18px;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1.5px solid rgba(148, 163, 184, 0.4);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            border-radius: 30px;
+            color: #e2e8f0;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .link-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(148, 163, 184, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+        }
+
+        .footer-logo {
+            text-align: center;
+            margin-top: 30px;
+            color: #94a3b8;
+            font-size: 13px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(148, 163, 184, 0.2);
+            font-weight: 600;
+        }
+
+        /* Certificates Page Styles */
+        .certificates-page {
+            display: none;
+        }
+
+        .certificates-page.active {
+            display: block;
+        }
+
+        .main-page.hidden {
+            display: none;
+        }
+
+        .back-button {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1.5px solid rgba(239, 68, 68, 0.4);
+            color: #ef4444;
+            width: 50px;
+            height: 50px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(239, 68, 68, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            font-size: 18px;
+        }
+
+        .back-button:hover {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: rgba(239, 68, 68, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(239, 68, 68, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+        }
+
+        .cert-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .cert-header h1 {
+            margin: 0;
+        }
+
+        .cert-footer {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 25px;
+        }
+
+        .cert-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1.5px solid rgba(148, 163, 184, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            border-radius: 30px;
+            padding: 18px;
+            margin-bottom: 15px;
+        }
+
+        .cert-title {
+            color: #e2e8f0;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .cert-link {
+            display: inline-block;
+            padding: 10px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1.5px solid rgba(148, 163, 184, 0.4);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+            border-radius: 30px;
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .cert-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(148, 163, 184, 0.6);
+            transform: translateX(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.12) inset;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Main Page -->
+        <div class="main-page">
+            <div>
+                <img class="logo" src="/images/CyberNestSec_Logo.jpeg" alt="CyberNestSec_Logo">
+            </div>
+            <h1>CyberNestSec</h1>
+            <p class="bio">
+                CyberNestSec | شريكك الرقمي
+                <br>
+                لحماية بياناتك المهمة 🖥️
+                <br>
+                نصائح وحلول سريعة وفعّالة 🧩
+                <br>
+                استشارة مجانية متاحة الآن 📬
+            </p>
+
+            <div class="social-links">
+                <a href="https://www.instagram.com/cybernestsec/" target="_blank" class="social-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+                <a href="https://www.tiktok.com/@cybernest_sec" target="_blank" class="social-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                    </svg>
+                </a>
+                <a href="https://github.com/Alaa-muhammad" target="_blank" class="social-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/people/cybernestsec/61582108905923/" target="_blank"
+                    class="social-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/alaa-muhammad-791982349/" target="_blank" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                        role="img" aria-labelledby="anfopksk2b1uk9pjkmut4iwi3zh2da7i" class="octicon">
+                        <title id="anfopksk2b1uk9pjkmut4iwi3zh2da7i">LinkedIn</title>
+                        <g clip-path="url(#clip0_202_91845)">
+                            <path
+                                d="M14.5455 0H1.45455C0.650909 0 0 0.650909 0 1.45455V14.5455C0 15.3491 0.650909 16 1.45455 16H14.5455C15.3491 16 16 15.3491 16 14.5455V1.45455C16 0.650909 15.3491 0 14.5455 0ZM5.05746 13.0909H2.912V6.18764H5.05746V13.0909ZM3.96291 5.20073C3.27127 5.20073 2.712 4.64 2.712 3.94982C2.712 3.25964 3.272 2.69964 3.96291 2.69964C4.65236 2.69964 5.21309 3.26036 5.21309 3.94982C5.21309 4.64 4.65236 5.20073 3.96291 5.20073ZM13.0938 13.0909H10.9498V9.73382C10.9498 8.93309 10.9353 7.90327 9.83491 7.90327C8.71855 7.90327 8.54691 8.77527 8.54691 9.67564V13.0909H6.40291V6.18764H8.46109V7.13091H8.49018C8.77673 6.58836 9.47636 6.016 10.52 6.016C12.6924 6.016 13.0938 7.44582 13.0938 9.30473V13.0909V13.0909Z"
+                                fill="currentColor"></path>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+
+            <button class="link-button" onclick="showCertificates()">مصادر شهاداتي</button>
+
+            <div class="footer-logo">
+                CyberNestSec
+            </div>
+        </div>
+
+        <!-- Certificates Page -->
+        <div class="certificates-page">
+            <div class="cert-header">
+                <h1>شهاداتي</h1>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-title">Certified Ethical Hacker (CEH-cisco) </div>
+                <a href="https://www.thehope-tech.com/course/78-%D8%AF%D9%88%D8%B1%D8%A9-%D8%A7%D9%84%D9%87%D8%A7%D9%83%D8%B1-%D8%A7%D9%84%D8%A3%D8%AE%D9%84%D8%A7%D9%82%D9%8A-certified-ethical-hacker" class="cert-link">انتقل للدورة ↗</a>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-title">CTF and Penetration Testing</div>
+                <a href="#" class="cert-link">قيد العمل ↗</a>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-title">Azure AI Cloud– Microsoft
+                </div>
+                <a href="https://www.coursera.org/projects/build-a-computer-vision-app-with-azure-cognitive-services" class="cert-link">انتقل للدورة ↗</a>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-title"> Cybersecurity specialization -Edrak</div>
+                <a href="https://programs.edraak.org/learn/specialization/cs101-vv2" class="cert-link">انتقل للدورة ↗</a>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-title">User Experience design</div>
+                <a href="https://programs.edraak.org/learn/course/uxdesign-v1" class="cert-link">انتقل للدورة ↗</a>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-title">Android application programming</div>
+                <a href="https://programs.edraak.org/learn/course/ap101-vt1-2020" class="cert-link">انتقل للدورة ↗</a>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-title">PHP-Laravel</div>
+                <a href="https://www.thehope-tech.com/course/2-%D8%AF%D9%88%D8%B1%D8%A9-%D8%A8%D8%B1%D9%85%D8%AC%D8%A9-%D8%A7%D9%84%D9%85%D9%88%D8%A7%D9%82%D8%B9-%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%AA%D9%82%D8%AF%D9%85%D8%A9-php" class="cert-link">انتقل للدورة ↗</a>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-title">C-Programming Language</div>
+                <a href="https://olympus.mygreatlearning.com/courses/54666" class="cert-link">انتقل للدورة ↗</a>
+            </div>
+
+            <div class="cert-footer">
+                <button class="link-button back-button" onclick="showMain()">
+                    ←
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showCertificates() {
+            document.querySelector('.main-page').classList.add('hidden');
+            document.querySelector('.certificates-page').classList.add('active');
+        }
+
+        function showMain() {
+            document.querySelector('.main-page').classList.remove('hidden');
+            document.querySelector('.certificates-page').classList.remove('active');
+        }
+    </script>
+</body>
+
+</html>
