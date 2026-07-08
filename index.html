@@ -4,388 +4,553 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberNestSec</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Alaa Muhammad | CyberNestSec Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Cairo', sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            color: #fff;
-        }
+body {
+    font-family: 'Cairo', sans-serif;
+    background: radial-gradient(circle at top, #083344, #020617 40%);
+    color: white;
+    min-height: 100vh;
+    padding: 10px;
+}
 
-        .container {
-            max-width: 420px;
-            width: 100%;
-            background: rgba(30, 41, 59, 0.2);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border-radius: 30px;
-            padding: 40px 30px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
-                0 0 0 1px rgba(255, 255, 255, 0.1) inset,
-                0 8px 16px rgba(0, 0, 0, 0.3);
-            border: 1.5px solid rgba(148, 163, 184, 0.3);
-        }
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px 0;
+}
 
-        .logo {
-            width: 90px;
-            height: 90px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, #3b82f6, #06b6d4);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-        }
+.card {
+    background: rgba(255, 255, 255, .05);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(34, 211, 238, .2);
+    border-radius: 25px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 30px rgba(6, 182, 212, .08);
+    transition: .3s;
+}
 
-        h1 {
-            text-align: center;
-            font-size: 22px;
-            margin-bottom: 12px;
-            color: #e2e8f0;
-            font-weight: 700;
-        }
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #22d3ee;
+}
 
-        .bio {
-            text-align: center;
-            color: #cbd5e1;
-            margin-bottom: 30px;
-            font-size: 14px;
-            line-height: 1.8;
-            font-weight: 400;
-        }
+.logo {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    box-shadow: 0 0 40px #06b6d4;
+}
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
+.hero {
+    text-align: center;
+}
 
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 30px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1.5px solid rgba(148, 163, 184, 0.4);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3),
-                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: #94a3b8;
-        }
+.hero h1 {
+    font-size: 36px;
+    margin-top: 20px;
+    color: #22d3ee;
+    font-weight: 800;
+}
 
-        .social-icon:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(148, 163, 184, 0.6);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4),
-                0 0 0 1px rgba(255, 255, 255, 0.15) inset;
-            color: #cbd5e1;
-        }
+.subtitle {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 15px 0;
+    color: #e2e8f0;
+}
 
-        .social-icon svg {
-            pointer-events: none;
-        }
+.description {
+    color: #cbd5e1;
+    line-height: 1.8;
+    font-size: 15px;
+}
 
-        .link-button {
-            width: 100%;
-            padding: 18px;
-            margin-bottom: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1.5px solid rgba(148, 163, 184, 0.4);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
-                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-            border-radius: 30px;
-            color: #e2e8f0;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: block;
-            text-align: center;
-            font-family: 'Cairo', sans-serif;
-        }
+.btn {
+    display: block;
+    width: 65%; 
+    padding: 16px;
+    margin: 15px auto;
+    max-width: 500px;
+    border-radius: 40px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    transition: .3s;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+}
 
-        .link-button:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(148, 163, 184, 0.6);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4),
-                0 0 0 1px rgba(255, 255, 255, 0.15) inset;
-        }
+.primary {
+    background: linear-gradient(90deg, #06b6d4, #2563eb);
+    color: white;
+    box-shadow: 0 0 25px rgba(6, 182, 212, .4);
+    border: none;
+}
 
-        .footer-logo {
-            text-align: center;
-            margin-top: 30px;
-            color: #94a3b8;
-            font-size: 13px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(148, 163, 184, 0.2);
-            font-weight: 600;
-        }
+.secondary {
+    border: 1.5px solid #22d3ee;
+    color: #22d3ee;
+    background: transparent;
+}
 
-        /* Certificates Page Styles */
-        .certificates-page {
-            display: none;
-        }
+.btn:hover {
+    transform: scale(1.03);
+}
 
-        .certificates-page.active {
-            display: block;
-        }
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
 
-        .main-page.hidden {
-            display: none;
-        }
+.social {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    color: #94a3b8;
+    transition: .3s;
+    text-decoration: none;
+    flex-shrink: 0; /* Prevents button distortion on small screens */
+}
 
-        .back-button {
-            background: rgba(239, 68, 68, 0.1);
-            border: 1.5px solid rgba(239, 68, 68, 0.4);
-            color: #ef4444;
-            width: 50px;
-            height: 50px;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(239, 68, 68, 0.2),
-                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-            font-size: 18px;
-        }
+.social svg {
+    pointer-events: none;
+}
 
-        .back-button:hover {
-            background: rgba(239, 68, 68, 0.2);
-            border-color: rgba(239, 68, 68, 0.6);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(239, 68, 68, 0.4),
-                0 0 0 1px rgba(255, 255, 255, 0.15) inset;
-        }
+.social:hover {
+    color: #22d3ee;
+    border-color: #22d3ee;
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
 
-        .cert-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 25px;
-        }
+.title {
+    font-size: 24px;
+    color: #22d3ee;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
 
-        .cert-header h1 {
-            margin: 0;
-        }
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
 
-        .cert-footer {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 25px;
-        }
+.project {
+    background: rgba(15, 23, 42, .7);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #334155;
+}
 
-        .cert-item {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1.5px solid rgba(148, 163, 184, 0.3);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3),
-                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-            border-radius: 30px;
-            padding: 18px;
-            margin-bottom: 15px;
-        }
+.project h3 {
+    color: #67e8f9;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
 
-        .cert-title {
-            color: #e2e8f0;
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 15px;
-        }
+.project p {
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.8;
+}
 
-        .cert-link {
-            display: inline-block;
-            padding: 10px 24px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1.5px solid rgba(148, 163, 184, 0.4);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2),
-                0 0 0 1px rgba(255, 255, 255, 0.08) inset;
-            border-radius: 30px;
-            color: #cbd5e1;
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            font-family: 'Cairo', sans-serif;
-        }
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
 
-        .cert-link:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(148, 163, 184, 0.6);
-            transform: translateX(-3px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3),
-                0 0 0 1px rgba(255, 255, 255, 0.12) inset;
-        }
+.skill-box {
+    background: #0f172a;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #1e293b;
+}
+
+.skill-box h3 {
+    color: #22d3ee;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.tag {
+    display: inline-block;
+    background: #083344;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin: 5px;
+    font-size: 13px;
+    color: #e2e8f0;
+}
+
+.page {
+    display: block;
+}
+
+.page.hidden {
+    display: none;
+}
+
+.course-details ul {
+    list-style: none;
+    margin: 15px 0 25px;
+}
+
+.course-details li {
+    margin-bottom: 12px;
+    color: #cbd5e1;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.course-details li::before {
+    content: "🔹";
+}
+
+@media(max-width: 600px) {
+    body {
+        padding: 8px;
+    }
+    .card {
+        padding: 20px 15px;
+        border-radius: 20px;
+    }
+    .hero h1 {
+        font-size: 28px;
+    }
+    .subtitle {
+        font-size: 16px;
+    }
+    .title {
+        font-size: 20px;
+    }
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    .skills {
+        grid-template-columns: 1fr;
+    }
+    
+    /* The fix happens right here */
+    .socials {
+        gap: 8px; 
+    }
+    .social {
+        width: 40px;
+        height: 40px;
+    }
+    .social svg {
+        width: 18px;
+        height: 18px;
+    }
+}
     </style>
 </head>
 
 <body>
+
     <div class="container">
-        <!-- Main Page -->
-        <div class="main-page">
-            <div>
-                <img class="logo" src="images/CyberNestSec_Logo.jpeg" alt="CyberNestSec_Logo">
-            </div>
-            <h1>CyberNestSec</h1>
-            <p class="bio">
-                CyberNestSec | شريكك الرقمي
-                <br> محتوى أمن سيبراني عملي 🛡️ 
-                <br>  لابات •  مواقع تدريب •  أدوات 🧪
-                <br>تعّلم الاختراق الأخلاقي خطوة بخطوة 📚
-            </p>
-           
-            <div class="social-links">
-                <a href="https://www.instagram.com/cybernestsec/" target="_blank" class="social-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                    </svg>
-                </a>
-                <a href="https://www.tiktok.com/@cybernestsec" target="_blank" class="social-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
-                    </svg>
-                </a>
-                <a href="https://github.com/Alaa-muhammad" target="_blank" class="social-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                </a>
-                <a href="https://www.facebook.com/people/cybernestsec/61582108905923/" target="_blank"
-                    class="social-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                    </svg>
-                </a>
-                <a href="https://youtube.com/@cybernestsec" target="_blank" class="social-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                </a>
-                
-                <a href="https://chat.whatsapp.com/BxtgmaJ6PlS6vfkxTuIMld" target="_blank" class="social-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                    </svg>
-                </a>
-            </div>
 
-            <button class="link-button" onclick="showCertificates()">مصادر شهاداتي</button>
-
-            <div class="footer-logo">
-                CyberNestSec
-            </div>
-        </div>
-
-        <!-- Certificates Page -->
-        <div class="certificates-page">
-            <div class="cert-header">
-                <h1>شهاداتي</h1>
-            </div>
-
-            <div class="cert-item">
-                <div class="cert-title">Certified Ethical Hacker (CEH-cisco) </div>
-                <a href="https://www.thehope-tech.com/course/78-%D8%AF%D9%88%D8%B1%D8%A9-%D8%A7%D9%84%D9%87%D8%A7%D9%83%D8%B1-%D8%A7%D9%84%D8%A3%D8%AE%D9%84%D8%A7%D9%82%D9%8A-certified-ethical-hacker" class="cert-link">انتقل للدورة ↗</a>
-            </div>
-
-            <div class="cert-item">
-                <div class="cert-title">CTF and Penetration Testing</div>
-                <a href="https://www.udemy.com/course/ctf-asefabualrob/" class="cert-link"> انتقل للدورة↗</a>
-            </div>
-
-            <div class="cert-item">
-                <div class="cert-title">Azure AI Cloud– Microsoft
+        <!-- الصفحة الرئيسية للموقع -->
+        <div id="main-page" class="page">
+            
+            <!-- القسم الرئيسي للهوية الشخصية -->
+            <section class="card hero">
+                <img src="images/CyberNestSec_Logo.jpeg" class="logo" alt="CyberNestSec_Logo">
+                <h1>CyberNestSec</h1>
+                <div class="subtitle">
+                    محلل أمن سيبراني | صانع محتوى أمني | مطور برمجيات
                 </div>
-                <a href="https://www.coursera.org/projects/build-a-computer-vision-app-with-azure-cognitive-services" class="cert-link">انتقل للدورة ↗</a>
-            </div>
+                <p class="description">
+                    محلل أمن سيبراني وصانع محتوى بخلفية في علوم الحاسوب، متخصصة في تقييم الثغرات واختبار الاختراق الأساسي، ومؤسسة سلسلة "الأمن السيبراني من الصفر" التعليمية والتطبيقية.
+                </p>
 
-            <div class="cert-item">
-                <div class="cert-title"> Cybersecurity specialization -Edrak</div>
-                <a href="https://programs.edraak.org/learn/specialization/cs101-vv2" class="cert-link">انتقل للدورة ↗</a>
-            </div>
+                <a class="btn primary" href="https://chat.whatsapp.com/BxtgmaJ6PlS6vfkxTuIMld" target="_blank">
+                    🚀 انضم إلى مجتمع CyberNestSec 
+                </a>
 
-            <div class="cert-item">
-                <div class="cert-title">User Experience design</div>
-                <a href="https://programs.edraak.org/learn/course/uxdesign-v1" class="cert-link">انتقل للدورة ↗</a>
-            </div>
-
-            <div class="cert-item">
-                <div class="cert-title">Android application programming</div>
-                <a href="https://programs.edraak.org/learn/course/ap101-vt1-2020" class="cert-link">انتقل للدورة ↗</a>
-            </div>
-
-            <div class="cert-item">
-                <div class="cert-title">PHP-Laravel</div>
-                <a href="https://www.thehope-tech.com/course/2-%D8%AF%D9%88%D8%B1%D8%A9-%D8%A8%D8%B1%D9%85%D8%AC%D8%A9-%D8%A7%D9%84%D9%85%D9%88%D8%A7%D9%82%D8%B9-%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%AA%D9%82%D8%AF%D9%85%D8%A9-php" class="cert-link">انتقل للدورة ↗</a>
-            </div>
-
-            <div class="cert-item">
-                <div class="cert-title">C-Programming Language</div>
-                <a href="https://olympus.mygreatlearning.com/courses/54666" class="cert-link">انتقل للدورة ↗</a>
-            </div>
-
-            <div class="cert-item">
-                <div class="cert-title">HP - Cybersecurity Awareness</div>
-                <a href="https://www.life-global.org/course/346-introduction-to-cybersecurity-awareness" class="cert-link">انتقل للدورة ↗</a>
-            </div>
-
-            <div class="cert-item">
-                <div class="cert-title">HP - Professional networking for career growth</div>
-                <a href="https://www.life-global.org/course/427-professional-networking-for-career-growth" class="cert-link">انتقل للدورة ↗</a>
-            </div>
-
-            <div class="cert-footer">
-                <button class="link-button back-button" onclick="showMain()">
-                    ←
+                <button class="btn secondary" onclick="showCoursePage()">
+                    🎓 دورة الأمن السيبراني من الصفر
                 </button>
-            </div>
+
+                <!-- مواقع التواصل بالترتيب -->
+                <div class="socials">
+                    <a class="social" href="https://www.instagram.com/cybernestsec/" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0 3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <a class="social" href="https://www.tiktok.com/@cybernestsec" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                        </svg>
+                    </a>
+                    <a class="social" href="https://github.com/Alaa-muhammad" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+                    <a class="social" href="https://www.facebook.com/people/cybernestsec/61582108905923/" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                    <a class="social" href="https://youtube.com/@cybernestsec" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                    <a class="social" href="https://chat.whatsapp.com/BxtgmaJ6PlS6vfkxTuIMld" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+
+            <!--  الخبرات العملية   -->
+            <section class="card">
+                <h2 class="title">الخبرات المهنية</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #67e8f9; font-size: 17px;">صانعة محتوى ومدربة أمن سيبراني</h3>
+                    <p class="description" style="font-size: 14px;">تطوير منهج تعليمي متكامل، وتدريب الطلاب على فحص الشبكات (Nmap)، استغلال منافذ SSH، وتحليل الأدلة الرقمية الفنية (Exiftool, Binwalk).</p>
+                </div>
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 15px 0;">
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #67e8f9; font-size: 17px;">متدربة في الأمن السيبراني</h3>
+                    <p class="description" style="font-size: 14px;">إقامة عملية مكثفة داخل قسم الأمن السيبراني، التركيز على مبادئ الدفاع والاختراق الهجومي داخل لابات الشبكات الافتراضية وإعداد تقارير هندسية للمخاطر.</p>
+                </div>
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 15px 0;">
+                <div>
+                    <h3 style="color: #67e8f9; font-size: 17px;">متدربة في البرمجيات وعلم البيانات</h3>
+                    <p class="description" style="font-size: 14px;">تطوير مهارات البناء البرمجي الكامل (Full-Stack) وكتابة المنطق الخلفي الآمن للتطبيقات باستخدام إطار عمل PHP-Laravel.</p>
+                </div>
+            </section>
+
+            <!-- المشاريع  -->
+            <section class="card">
+                <h2 class="title">أبرز المشاريع</h2>
+                <div class="project-grid">
+                    <div class="project">
+                        <h3>CyberNest Security Portfolio</h3>
+                        <p>تصميم وبناء موقع معرض الأعمال الشخصي والتدوين الأمني من الصفر لعرض التقارير الفنية والأدوات.<br><strong>التقنيات:</strong> HTML, CSS, JavaScript, GitHub Pages</p>
+                        <span style="display: inline-block; margin-top: 15px; color: #64748b; font-size: 13px; font-weight: 600;">مستضاف على GitHub Pages 🌐</span>
+                    </div>
+                    <div class="project">
+                        <h3>Multi-Layered Digital Forensics Challenge (CTF)</h3>
+                        <p>تصميم وتطوير تحدي تحقيق جنائي رقمي مخصص يتطلب استخراج بيانات متعدد الطبقات وفك تشفير البيانات عبر تحليل Metadata وملفات المجلدات المضغوطة المقفلة.</p>
+                        <span style="display: inline-block; margin-top: 15px; color: #64748b; font-size: 13px; font-weight: 600;">قريباً على GitHub 🛠️</span>
+                    </div>
+                    <div class="project">
+                        <h3>Hardened Vulnerable Lab (DVWA)</h3>
+                        <p>إعداد وتعديل بيئة لابات مصابة بـ DVWA على خادم أوبونتو، وتطبيق تقنيات فحص وتحديد الخدمات عبر Nmap واستغلالها من خلال Metasploit للحصول على الأعلام.</p>
+                        <span style="display: inline-block; margin-top: 15px; color: #64748b; font-size: 13px; font-weight: 600;">قريباً على GitHub 🛠️</span>
+                    </div>
+                    <div class="project">
+                        <h3>Café Ordering System</h3>
+                        <p>منصة ويب كاملة من البداية للنهاية تعتمد على فحص تصفية المدخلات وحماية المعاملات الحيوية لقطع دابر ثغرات الـ SQLi والـ XSS.<br><strong>التقنيات:</strong> Laravel, MySQL</p>
+                        <span style="display: inline-block; margin-top: 15px; color: #64748b; font-size: 13px; font-weight: 600;">قريباً على GitHub 🛠️</span>
+                    </div>
+                    <div class="project">
+                        <h3>Secure Blogging Platform</h3>
+                        <p>تطبيق ويب نمطي لإدارة العمليات الأساسية (CRUD) يحتوي على آليات تشفير قوية لتوثيق وحماية هويات المستخدمين وصيانة البيانات المعالجة.</p>
+                        <span style="display: inline-block; margin-top: 15px; color: #64748b; font-size: 13px; font-weight: 600;">قريباً على GitHub 🛠️</span>
+                    </div>
+                </div>
+            </section>
+
+            <!--  المهارات  -->
+            <section class="card">
+                <h2 class="title">مهاراتي التقنية</h2>
+                <div class="skills">
+                    <div class="skill-box">
+                        <h3>Security & VAPT</h3>
+                        <span class="tag">Penetration Testing</span><span class="tag">Nmap</span><span class="tag">Metasploit</span><span class="tag">OWASP Top 10</span><span class="tag">Web Hardening</span>
+                    </div>
+                    <div class="skill-box">
+                        <h3>Forensics & Crypto</h3>
+                        <span class="tag">Exiftool</span><span class="tag">Binwalk</span><span class="tag">Metadata Analysis</span><span class="tag">Data Carving</span><span class="tag">Cryptography</span>
+                    </div>
+                    <div class="skill-box">
+                        <h3>Development & DB</h3>
+                        <span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">C Language</span><span class="tag">Java</span><span class="tag">OOP</span>
+                    </div>
+                    <div class="skill-box">
+                        <h3>Systems & Networks</h3>
+                        <span class="tag">Kali Linux (GNOME/XFCE)</span><span class="tag">Ubuntu Server</span><span class="tag">Bash Scripting</span><span class="tag">TCP/IP</span>
+                    </div>
+                </div>
+            </section>
+
+            <!--  الشهادات والمصادر -->
+            <section class="card">
+                <h2 class="title">الشهادات والمصادر التعليمية</h2>
+                <p class="description" style="margin-bottom: 20px; font-size: 14px; color: #94a3b8;">اضغط على أي شهادة للانتقال إلى المنصة المانحة مباشرة للتحقق من المصدر:</p>
+                
+                <div class="project-grid">
+                    <a href="https://www.netacad.com/courses/introduction-to-cybersecurity?courseLang=en-US" target="_blank" style="text-decoration: none;" class="project">
+                        <h3 style="color: #22d3ee;">Introduction to Cybersecurity</h3>
+                        <p style="color: #cbd5e1; font-size: 13px; margin-top: 5px;">Cisco Networking Academy</p>
+                    </a>
+
+                    <a href="https://www.coursera.org/projects/build-a-computer-vision-app-with-azure-cognitive-services" target="_blank" style="text-decoration: none;" class="project">
+                        <h3 style="color: #22d3ee;">Build a Computer Vision App with Azure Cognitive Services</h3>
+                        <p style="color: #cbd5e1; font-size: 13px; margin-top: 5px;">Microsoft & Coursera</p>
+                    </a>
+
+                    <a href="https://www.edraak.org/en/programs/specialization/cs101-vv2/" target="_blank" style="text-decoration: none;" class="project">
+                        <h3 style="color: #22d3ee;">Cyber Security Specialization (Full Track)</h3>
+                        <p style="color: #cbd5e1; font-size: 13px; margin-top: 5px;">Edraak</p>
+                    </a>
+
+                    <a href="https://www.udemy.com/course/ctf-asefabualrob/" target="_blank" style="text-decoration: none;" class="project">
+                        <h3 style="color: #22d3ee;">Introduction to CTF and Penetration Testing</h3>
+                        <p style="color: #cbd5e1; font-size: 13px; margin-top: 5px;">Udemy</p>
+                    </a>
+
+                    <a href="https://www.edraak.org/en/programs/course/ap101-vt1-2020/" target="_blank" style="text-decoration: none;" class="project">
+                        <h3 style="color: #22d3ee;">Android Application Programming</h3>
+                        <p style="color: #cbd5e1; font-size: 13px; margin-top: 5px;">Edraak</p>
+                    </a>
+
+                    <a href="https://www.mygreatlearning.com/academy/learn-for-free/courses/c-for-beginners1" target="_blank" style="text-decoration: none;" class="project">
+                        <h3 style="color: #22d3ee;">C for Beginners</h3>
+                        <p style="color: #cbd5e1; font-size: 13px; margin-top: 5px;">Great Learning</p>
+                    </a>
+
+                    <a href="https://www.life-global.org/course/346-introduction-to-cybersecurity-awareness" target="_blank" style="text-decoration: none;" class="project">
+                        <h3 style="color: #22d3ee;">Introduction to Cybersecurity Awareness</h3>
+                        <p style="color: #cbd5e1; font-size: 13px; margin-top: 5px;">HP LIFE</p>
+                    </a>
+
+                    <a href="https://www.edraak.org/programs/course/uxdesign-v1/" target="_blank" style="text-decoration: none;" class="project">
+                        <h3 style="color: #22d3ee;">User Experience (UX) Design</h3>
+                        <p style="color: #cbd5e1; font-size: 13px; margin-top: 5px;">Edraak</p>
+                    </a>
+
+                    <a href="https://www.life-global.org/course/427-professional-networking-for-career-growth" target="_blank" style="text-decoration: none;" class="project">
+                        <h3 style="color: #22d3ee;">Professional Networking for Career Growth</h3>
+                        <p style="color: #cbd5e1; font-size: 13px; margin-top: 5px;">HP LIFE</p>
+                    </a>
+
+
+
+                    <a href="#" style="text-decoration: none; cursor: default;" class="project" onclick="event.preventDefault();">
+                        <h3 style="color: #22d3ee;">Basics of E-Services</h3>
+                        <p style="color: #cbd5e1; font-size: 13px; margin-top: 5px;">Albalasmeh Business Company</p>
+                    </a>
+                </div>
+            </section>
+
         </div>
+
+        <!-- صفحة تفاصيل الدورة -->
+        <div id="course-page" class="page hidden">
+            <section class="card course-details">
+                <h2 class="title">🌻 دورة الأمن السيبراني من الصفر | Cybersecurity From Zero</h2>
+                <p class="description" style="font-size: 16px; margin-bottom: 20px;">
+                    إذا كنت حاب تدخل عالم الأمن السيبراني وما بتعرف من وين تبدأ، هاي الدورة معمولة إلك 🚀 خلال الدورة رح تتعلم الأساسيات المهمة بشكل نظري + عملي.
+                </p>
+                
+                <div class="project-grid" style="margin-bottom: 25px;">
+                    <div class="project">
+                        <h3>🌐 الشبكات وأنظمة التشغيل</h3>
+                        <p>أساسيات الشبكات ومفاهيمها المهمة، والتعامل مع نظام Kali Linux وأهم أوامره.</p>
+                    </div>
+                    <div class="project">
+                        <h3>🔐 التشفير (Cryptography)</h3>
+                        <p>فهم أنواع التشفير المختلفة، وتطبيقات عملية على فك وتحليل الشفرات.</p>
+                    </div>
+                    <div class="project">
+                        <h3>🕸️ أمن تطبيقات الويب (Web Security)</h3>
+                        <p>التعرف على أشهر ثغرات الويب، وفهم طريقة اكتشافها واستغلالها ضمن بيئة تعليمية.</p>
+                    </div>
+                    <div class="project">
+                        <h3>🔍 التحليل الجنائي الرقمي (Digital Forensics)</h3>
+                        <p>استخراج البيانات، وتحليل الأدلة الرقمية باستخدام الأدوات المتخصصة.</p>
+                    </div>
+                    <div class="project">
+                        <h3>⚔️ اختبار الاختراق (Penetration Testing)</h3>
+                        <p>فحص الأنظمة واكتشاف الثغرات، التعرف على أساليب الاستغلال، وتطبيق عملي على اختراق جهاز Windows ضمن بيئة تدريبية.</p>
+                    </div>
+                </div>
+
+                <h3 style="color: #67e8f9; margin-top: 20px;">💡 ماذا ستخرج من الدورة؟</h3>
+                <ul style="margin-bottom: 25px;">
+                    <li>أساس قوي في الأمن السيبراني.</li>
+                    <li>فهم عملي للأدوات المستخدمة بالمجال.</li>
+                    <li>بداية واضحة لطريق الـ Ethical Hacking و Penetration Testing.</li>
+                </ul>
+                
+                <p class="description" style="color: #22d3ee; font-weight: 700; text-align: center; margin-bottom: 25px;">
+                    🎯 الدورة مناسبة للمبتدئين تماماً حتى لو ما عندك خبرة سابقة.
+                </p>
+
+                <!-- أزرار روابط الدورة والمواد المرفقة مرتبة ومنظمة خلف بعضها -->
+                <div style="margin-top: 30px;">
+                    <a class="btn primary" href="https://youtube.com/playlist?list=PLvNIJaBXdLAVY_pg156dHmFVo8rL6BKCz&si=c1av-3Obe6D9EhU-" target="_blank">
+                        ▶ ابدأ الآن واذهب إلى قائمة التشغيل على يوتيوب
+                    </a>
+
+                    <a class="btn secondary" href="https://mega.nz/folder/oB8y0b7b#sARYbGxmuT5iaSm9oCQT8w" target="_blank" style="border-color: #10b981; color: #10b981; box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);">
+                        📁 تحميل ملفات ولابات الدورة التطبيقية (MEGA)
+                    </a>
+
+                    <a class="btn secondary" href="https://canva.link/k7y3gduodesuy9i" target="_blank" style="border-color: #a855f7; color: #a855f7; box-shadow: 0 0 15px rgba(168, 85, 247, 0.15);">
+                        📊 استعراض سلايدات الشرح (Canva Slides)
+                    </a>
+
+                    <button class="btn secondary" onclick="showMainPage()" style="margin-top: 25px; border-color: #64748b; color: #94a3b8;">
+                        🔙 العودة للملف الشخصي الرئيسي
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- الفوتر -->
+        <footer>
+            CyberNestSec | تعلّم. تدرّب. احمِ.
+        </footer>
+
     </div>
 
     <script>
-        function showCertificates() {
-            document.querySelector('.main-page').classList.add('hidden');
-            document.querySelector('.certificates-page').classList.add('active');
+        function showCoursePage() {
+            document.getElementById('main-page').classList.add('hidden');
+            document.getElementById('course-page').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function showMain() {
-            document.querySelector('.main-page').classList.remove('hidden');
-            document.querySelector('.certificates-page').classList.remove('active');
+        function showMainPage() {
+            document.getElementById('course-page').classList.add('hidden');
+            document.getElementById('main-page').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
-
 </html>
